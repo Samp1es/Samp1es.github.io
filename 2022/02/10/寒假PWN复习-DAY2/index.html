@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>寒假PWN复习-DAY2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.设置rdi指向&#x2F;bin&#x2F;sh2.rsi&#x3D;0,rdx&#x3D;0;3.a&#x3D;0x3b4.system call 进行系统调用over">
+  <meta name="description" content="编译型语言代表：C语言 解释型语言代表：python 可执行文件 广义：文件中的数据是可执行代码的文件 ​            .out    .exe   .sh   .py 狭义：文件中的数据是机器码的文件 ​            .out    .exe    .dll    .so 可执行文件的分类 Windows：PE（Portable Executable） 可执行程序：.exe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2022/02/11/shellcode%E7%AE%80%E8%A6%81%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="寒假PWN复习-DAY2">
+<meta property="og:url" content="http://example.com/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.设置rdi指向&#x2F;bin&#x2F;sh2.rsi&#x3D;0,rdx&#x3D;0;3.a&#x3D;0x3b4.system call 进行系统调用over">
+<meta property="og:description" content="编译型语言代表：C语言 解释型语言代表：python 可执行文件 广义：文件中的数据是可执行代码的文件 ​            .out    .exe   .sh   .py 狭义：文件中的数据是机器码的文件 ​            .out    .exe    .dll    .so 可执行文件的分类 Windows：PE（Portable Executable） 可执行程序：.exe">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-10T20:41:43.872Z">
-<meta property="article:modified_time" content="2021-12-14T12:03:44.636Z">
+<meta property="og:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121142525596.png">
+<meta property="og:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121142633901.png">
+<meta property="og:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121143313327.png">
+<meta property="og:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121144710599.png">
+<meta property="og:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121150411830.png">
+<meta property="og:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121152417859.png">
+<meta property="article:published_time" content="2022-02-10T11:13:46.000Z">
+<meta property="article:modified_time" content="2022-02-19T11:14:17.219Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/X1c1/AppData/Roaming/Typora/typora-user-images/image-20220121142525596.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,12 +161,69 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-shellcode简要笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-寒假PWN复习-DAY2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      寒假PWN复习-DAY2
+    </h1>
+  
+
+        
+        <a href="/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/" class="archive-article-date">
+  	<time datetime="2022-02-10T11:13:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.设置rdi指向&#x2F;bin&#x2F;sh<br>2.rsi&#x3D;0,rdx&#x3D;0;<br>3.a&#x3D;0x3b<br>4.system call 进行系统调用<br>over</p>
+        <p>编译型语言代表：C语言</p>
+<p>解释型语言代表：python</p>
+<p><strong>可执行文件</strong></p>
+<p>广义：文件中的数据是可执行代码的文件</p>
+<p>​            .out    .exe   .sh   .py</p>
+<p>狭义：文件中的数据是机器码的文件</p>
+<p>​            .out    .exe    .dll    .so</p>
+<p><strong>可执行文件的分类</strong></p>
+<p>Windows：PE（Portable Executable）</p>
+<p>可执行程序：.exe</p>
+<p>动态链接库：.dll</p>
+<p>静态链接库：.lib</p>
+<p>Linux：ELF（Executable and Linkable Format）</p>
+<p>可执行程序：.out</p>
+<p>动态链接库：.so</p>
+<p>静态链接库：.a  </p>
+<p><strong>ELF内部结构</strong></p>
+<p>ELF分为三个大部分</p>
+<p>header（1&#x2F;2）内含ELF header（文件头）和Program Header Table（程序头或叫段表）</p>
+<p>header（2&#x2F;2)内含一个Section Header table（节头表）</p>
+<p>这两个部分主要包含一些控制信息，如权限</p>
+<p>Sections 包含Code、Date、Sections’ names三个部分</p>
+<p>分别用于存放代码、数据 </p>
+<p> ELF文件头表（ELF header）</p>
+<p>​        记录ELF文件组织结构</p>
+<p>程序头表&#x2F;段表（Program header table）</p>
+<p>​        告诉系统如何创建进程</p>
+<p>​        生成进程的可执行文件必须拥有此结构</p>
+<p>​        重定位文件（链接库）不一定需要</p>
+<p>​        段用于标识进程映像不同部分的权限</p>
+<p>节头表（Section header table）</p>
+<p>​        记录ELF文件的节区信息</p>
+<p>​        用于链接的目标文件必须拥有此结构</p>
+<p>​        其他类型的目标文件不一定需要</p>
+<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121142525596.png" alt="image-20220121142525596"> </p>
+<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121142633901.png" alt="image-20220121142633901"></p>
+<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121143313327.png" alt="image-20220121143313327"></p>
+<p>过程中，具有相同功能的节被合成了一个段</p>
+<p>Heap：动态内存申请调用，在程序需要额外的内存申请时发挥作用</p>
+<p>For kennel：操作系统占用</p>
+<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121144710599.png" alt="image-20220121144710599"></p>
+<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121150411830.png" alt="image-20220121150411830"></p>
+<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121152417859.png" alt="image-20220121152417859"></p>
 
       
 
@@ -239,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/11/shellcode%E7%AE%80%E8%A6%81%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,9 +317,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2022/02/11/shellcode%E7%AE%80%E8%A6%81%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
-    <a href="/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">寒假PWN复习-DAY2</div>
+  
+    <a href="/2022/02/07/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">寒假PWN复习-DAY1</div>
       <i class="icon-circle-right"></i>
     </a>
   
