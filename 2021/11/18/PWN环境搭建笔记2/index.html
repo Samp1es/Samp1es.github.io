@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>寒假PWN复习-DAY4 | Hexo</title>
+  <title>PWN环境搭建笔记2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU">
+  <meta name="description" content="Pwndbg linux自带的gdb并无法满足Pwn手的需求 所以需要Pwndbg这一作用于gdb的辅助 安装 安装Pwndbg需要利用git从github下载 所以先安装一个git sudo apt install git 下载完成后 git clone https：&#x2F;&#x2F;github.com&#x2F;pwndbg&#x2F;pwndbg 下载后 cd pwndbg  .&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寒假PWN复习-DAY4">
-<meta property="og:url" content="http://example.com/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/index.html">
+<meta property="og:title" content="PWN环境搭建笔记2">
+<meta property="og:url" content="http://example.com/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU">
+<meta property="og:description" content="Pwndbg linux自带的gdb并无法满足Pwn手的需求 所以需要Pwndbg这一作用于gdb的辅助 安装 安装Pwndbg需要利用git从github下载 所以先安装一个git sudo apt install git 下载完成后 git clone https：&#x2F;&#x2F;github.com&#x2F;pwndbg&#x2F;pwndbg 下载后 cd pwndbg  .&amp;#">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png">
-<meta property="og:image" content="https://s2.loli.net/2022/02/19/u4iQ9xrbovX2y1B.png">
-<meta property="article:published_time" content="2022-02-12T12:32:40.000Z">
-<meta property="article:modified_time" content="2022-02-22T07:59:39.147Z">
+<meta property="article:published_time" content="2021-11-18T04:21:51.000Z">
+<meta property="article:modified_time" content="2022-02-26T16:48:47.665Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,29 +154,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-寒假PWN复习-DAY4" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-PWN环境搭建笔记2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      寒假PWN复习-DAY4
+      PWN环境搭建笔记2
     </h1>
   
 
         
-        <a href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" class="archive-article-date">
-  	<time datetime="2022-02-12T12:32:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
+        <a href="/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/" class="archive-article-date">
+  	<time datetime="2021-11-18T04:21:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU</p>
-<p><img src="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/02/19/u4iQ9xrbovX2y1B.png" alt="image.png"></p>
+        <p><strong>Pwndbg</strong></p>
+<p>linux自带的gdb并无法满足Pwn手的需求</p>
+<p>所以需要Pwndbg这一作用于gdb的辅助</p>
+<p>安装</p>
+<p>安装Pwndbg需要利用git从github下载</p>
+<p>所以先安装一个git</p>
+<p>sudo apt install git</p>
+<p>下载完成后</p>
+<p>git clone https：&#x2F;&#x2F;github.com&#x2F;pwndbg&#x2F;pwndbg</p>
+<p>下载后</p>
+<p>cd pwndbg</p>
+<p> .&#x2F;setup.sh</p>
+<p>等待安装即可</p>
+<p><strong>checksec</strong></p>
+<p>跟随pwntools安装完了（大概）</p>
+<p><strong>one_gadget</strong></p>
+<p>需要一个ruby</p>
+<p>sudo apt install ruby</p>
+<p>安装完成后再安装一个包管理器</p>
+<p>sudo apt install gem</p>
+<p>随后</p>
+<p>sudo gem install  one_gadget</p>
+<p>如果报错 则升级gem</p>
+<p>sudo gem update</p>
 
       
 
@@ -259,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,20 +291,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/11/20/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B03/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          PWN环境安装笔记
+          PWN环境搭建笔记3
         
       </div>
     </a>
   
-  
-    <a href="/2022/02/11/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">寒假PWN复习-DAY3</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

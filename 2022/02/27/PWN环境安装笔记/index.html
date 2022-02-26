@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>寒假PWN复习-DAY4 | Hexo</title>
+  <title>PWN环境安装笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU">
+  <meta name="description" content="环境 Ubuntu20.04 工具 IDA Pro Pwntools Pwndbg IDA Pro IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行 B站星盟安全团队链接下也有网盘的来源 Pwntools 要安装Pwntools首先需要一个python的包管理工具pip 在ubuntu命令提示符中输入sudo apt  install python3-pip 等待安装完">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寒假PWN复习-DAY4">
-<meta property="og:url" content="http://example.com/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/index.html">
+<meta property="og:title" content="PWN环境安装笔记">
+<meta property="og:url" content="http://example.com/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU">
+<meta property="og:description" content="环境 Ubuntu20.04 工具 IDA Pro Pwntools Pwndbg IDA Pro IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行 B站星盟安全团队链接下也有网盘的来源 Pwntools 要安装Pwntools首先需要一个python的包管理工具pip 在ubuntu命令提示符中输入sudo apt  install python3-pip 等待安装完">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png">
-<meta property="og:image" content="https://s2.loli.net/2022/02/19/u4iQ9xrbovX2y1B.png">
-<meta property="article:published_time" content="2022-02-12T12:32:40.000Z">
-<meta property="article:modified_time" content="2022-02-22T07:59:39.147Z">
+<meta property="article:published_time" content="2022-02-26T16:01:23.000Z">
+<meta property="article:modified_time" content="2022-02-26T16:21:17.293Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,29 +154,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-寒假PWN复习-DAY4" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-PWN环境安装笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      寒假PWN复习-DAY4
+      PWN环境安装笔记
     </h1>
   
 
         
-        <a href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" class="archive-article-date">
-  	<time datetime="2022-02-12T12:32:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
+        <a href="/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2022-02-26T16:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU</p>
-<p><img src="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/02/19/u4iQ9xrbovX2y1B.png" alt="image.png"></p>
+        <p>环境 Ubuntu20.04</p>
+<p>工具</p>
+<p>IDA Pro</p>
+<p>Pwntools</p>
+<p>Pwndbg</p>
+<p><strong>IDA Pro</strong></p>
+<p>IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行</p>
+<p>B站星盟安全团队链接下也有网盘的来源</p>
+<p><strong>Pwntools</strong></p>
+<p>要安装Pwntools首先需要一个python的包管理工具pip</p>
+<p>在ubuntu命令提示符中输入sudo apt  install python3-pip</p>
+<p>等待安装完成即可 </p>
+<p>随后就可以 sudo pip3 install Pwntools</p>
+<p>同样也是等待安装即可</p>
+<p>如出现报错ailed to fetch <a target="_blank" rel="noopener" href="http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_5.13.0-28.31_amd64.deb">http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux-libc-dev_5.13.0-28.31_amd64.deb</a>  404  Not Found [IP: 91.189.91.38 80]</p>
+<p>先对apt进行升级 sudo apt update</p>
+<p>在操作即可</p>
 
       
 
@@ -259,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +284,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          PWN环境安装笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/02/11/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">寒假PWN复习-DAY3</div>
+    <a href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">寒假PWN复习-DAY4</div>
       <i class="icon-circle-right"></i>
     </a>
   
