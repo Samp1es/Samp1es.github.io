@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>PWN环境安装笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境 Ubuntu20.04 工具 IDA Pro Pwntools Pwndbg IDA Pro IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行 B站星盟安全团队链接下也有网盘的来源 Pwntools 要安装Pwntools首先需要一个python的包管理工具pip 在ubuntu命令提示符中输入sudo apt  install python3-pip 等待安装完">
+  <meta name="description" content="环境 Ubuntu20.04 工具 IDA Pro Pwntools Pwndbg checksec one_gadget LIbSearch main_arena_offset IDA Pro IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行 B站星盟安全团队链接下也有网盘的来源 Pwntools 要安装Pwntools首先需要一个python的包管理工具pip 在u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PWN环境安装笔记">
-<meta property="og:url" content="http://example.com/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="http://example.com/2021/11/16/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="环境 Ubuntu20.04 工具 IDA Pro Pwntools Pwndbg IDA Pro IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行 B站星盟安全团队链接下也有网盘的来源 Pwntools 要安装Pwntools首先需要一个python的包管理工具pip 在ubuntu命令提示符中输入sudo apt  install python3-pip 等待安装完">
+<meta property="og:description" content="环境 Ubuntu20.04 工具 IDA Pro Pwntools Pwndbg checksec one_gadget LIbSearch main_arena_offset IDA Pro IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行 B站星盟安全团队链接下也有网盘的来源 Pwntools 要安装Pwntools首先需要一个python的包管理工具pip 在u">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-26T16:01:23.000Z">
-<meta property="article:modified_time" content="2022-02-26T16:21:17.293Z">
+<meta property="article:published_time" content="2021-11-16T01:01:23.000Z">
+<meta property="article:modified_time" content="2022-02-26T17:09:41.607Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -166,8 +166,8 @@
   
 
         
-        <a href="/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-02-26T16:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
+        <a href="/2021/11/16/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2021-11-16T01:01:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-16</time>
 </a>
         
       </header>
@@ -179,6 +179,10 @@
 <p>IDA Pro</p>
 <p>Pwntools</p>
 <p>Pwndbg</p>
+<p>checksec</p>
+<p>one_gadget</p>
+<p>LIbSearch</p>
+<p>main_arena_offset</p>
 <p><strong>IDA Pro</strong></p>
 <p>IDA Pro比较简单 找网上别人发的解包就行，直接装在Windows中就行</p>
 <p>B站星盟安全团队链接下也有网盘的来源</p>
@@ -270,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/27/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/16/PWN%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,11 +288,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">寒假PWN复习-DAY4</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          PWN环境搭建笔记2
+        
+      </div>
     </a>
+  
   
 </nav>
 
