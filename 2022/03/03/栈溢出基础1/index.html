@@ -6,19 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>攻防世界新手区pwn第一题 | Hexo</title>
+  <title>栈溢出基础1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sudo python3 setup.py develop 题目：get_shell NC是个好东西 做提前养成nc线先检查一下的好习惯 万一有惊喜呢">
+  <meta name="description" content="栈溢出位置：local variables 该位置一般用于存放局部变量，受用户控制可写入数据 函数调用栈 ！！！压栈顺序是从高地址压入低地址的 因此，栈顶对应内存地址压栈时变小，退栈时变大 三个重要寄存器–esp、ebp、eip eip储存的是下一条将要被执行的指令的地址 他指向的地址都会被当作指令 esp用于保存调用栈的栈顶地址 ebp用于保存调用栈的栈基地址 例子 vim test.c #">
 <meta property="og:type" content="article">
-<meta property="og:title" content="攻防世界新手区pwn第一题">
-<meta property="og:url" content="http://example.com/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/index.html">
+<meta property="og:title" content="栈溢出基础1">
+<meta property="og:url" content="http://example.com/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="sudo python3 setup.py develop 题目：get_shell NC是个好东西 做提前养成nc线先检查一下的好习惯 万一有惊喜呢">
+<meta property="og:description" content="栈溢出位置：local variables 该位置一般用于存放局部变量，受用户控制可写入数据 函数调用栈 ！！！压栈顺序是从高地址压入低地址的 因此，栈顶对应内存地址压栈时变小，退栈时变大 三个重要寄存器–esp、ebp、eip eip储存的是下一条将要被执行的指令的地址 他指向的地址都会被当作指令 esp用于保存调用栈的栈顶地址 ebp用于保存调用栈的栈基地址 例子 vim test.c #">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-26T17:13:40.000Z">
-<meta property="article:modified_time" content="2022-02-26T17:15:04.444Z">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/xu6tRV5YZidgSUb.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/d4vqoRUTwtI2z13.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/cqifpeS65DaIRkj.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/yjim21FkvWtaEMr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/Rau2OFVAUiNtGSj.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/JYtNf9nO2UoKwrm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/LpW58Y2tviNrDZ3.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/CXSP39ymDVhrlqf.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/MU4mi7vAlGP8Hb9.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/IPG3VWL6ilKa4tF.png">
+<meta property="og:image" content="https://s2.loli.net/2022/03/03/7dWkHs32iCjPIaR.png">
+<meta property="article:published_time" content="2022-03-03T14:16:35.000Z">
+<meta property="article:modified_time" content="2022-03-03T15:53:19.794Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/03/03/xu6tRV5YZidgSUb.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,31 +166,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-攻防世界新手区pwn第一题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-栈溢出基础1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      攻防世界新手区pwn第一题
+      栈溢出基础1
     </h1>
   
 
         
-        <a href="/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-26T17:13:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
+        <a href="/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/" class="archive-article-date">
+  	<time datetime="2022-03-03T14:16:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>sudo python3 setup.py develop</p>
-<p>题目：get_shell</p>
-<p>NC是个好东西</p>
-<p>做提前养成nc线先检查一下的好习惯</p>
-<p>万一有惊喜呢</p>
+        <p><img src="https://s2.loli.net/2022/03/03/xu6tRV5YZidgSUb.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2022/03/03/d4vqoRUTwtI2z13.png" alt="image.png"></p>
+<p>栈溢出位置：local variables</p>
+<p>该位置一般用于存放局部变量，受用户控制可写入数据</p>
+<p><strong>函数调用栈</strong></p>
+<p>！！！压栈顺序是从高地址压入低地址的</p>
+<p>因此，栈顶对应内存地址压栈时变小，退栈时变大</p>
+<p><strong>三个重要寄存器–esp、ebp、eip</strong></p>
+<p>eip储存的是下一条将要被执行的指令的地址</p>
+<p>他指向的地址都会被当作指令</p>
+<p>esp用于保存调用栈的栈顶地址</p>
+<p>ebp用于保存调用栈的栈基地址</p>
+<p><strong>例子</strong></p>
+<p>vim test.c</p>
+<p>#incude &lt;stdio.h&gt;</p>
+<p>int sum(int x,int y){</p>
+<p>x+y;</p>
+<p>}</p>
+<p>int main(){<br>sum(1,2);</p>
+<p>return 0;</p>
+<p>}</p>
+<p><strong>sum一类也叫复函数</strong></p>
+<p>在运行调用函数（caller）调用被调用函数（callee）的指令时</p>
+<p><img src="https://s2.loli.net/2022/03/03/cqifpeS65DaIRkj.png" alt="image.png"></p>
+<p>1.将被调用函数的参数压入栈内，如没有被调用函数则跳过该步骤。在test.c中，此步骤压入sum函数参数</p>
+<p><img src="https://s2.loli.net/2022/03/03/yjim21FkvWtaEMr.png" alt="image.png"></p>
+<p>2.将调用函数指令的下一条指令地址作为被调用函数的返回地址压入栈中，这样调用函数（caller）的eip（指令）信息得以保存。在test.c中，此步骤压入（return 0）的地址</p>
+<p><img src="https://s2.loli.net/2022/03/03/Rau2OFVAUiNtGSj.png" alt="image.png"></p>
+<p> <strong>3.将被调用函数的局部变量等数据压入栈内</strong></p>
+<p>栈溢出通常都在这一步发生。在test.c中，此步骤压入（1与2）</p>
+<p><img src="https://s2.loli.net/2022/03/03/JYtNf9nO2UoKwrm.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2022/03/03/LpW58Y2tviNrDZ3.png" alt="image.png"></p>
+<p>4.在被调用函数执行完成后，栈开始恢复状态</p>
+<p>首先先将被调用函数的局部变量弹出栈中。</p>
+<p><img src="https://s2.loli.net/2022/03/03/CXSP39ymDVhrlqf.png" alt="image.png"></p>
+<p>5.然后将及地址内储存的调用函数的基地址</p>
+<p>并将ebp值改为此基地址的值，将当前栈底变换位调用函数栈基。在test.c中，ebp值将改写位main函数栈帧基地址</p>
+<p><img src="https://s2.loli.net/2022/03/03/MU4mi7vAlGP8Hb9.png" alt="image.png"></p>
+<p>6.将被调用函数返回地址弹出栈中，并pop至eip中，eip值被改写指向调用函数（caller）调用被调用函数（callee）指令的下一条指令，此时栈帧已恢复为调用函数（caller）栈帧，被调用函数栈帧被完全弹出栈中。</p>
+<p><img src="https://s2.loli.net/2022/03/03/IPG3VWL6ilKa4tF.png" alt="image.png"></p>
+<p>在被调用函数执行的过程中，我们知道，栈帧顺序从栈顶到栈底是被调用函数的局部变量——被调用函数的返回地址——ebp——被调用函数参数</p>
+<p>所以当局部变量申请的空间被填满后，数据会溢出到返回地址的空间。</p>
+<p><img src="https://s2.loli.net/2022/03/03/7dWkHs32iCjPIaR.png" alt="image.png"></p>
+<p>例子中，char类型buf至申请了8个字节的空间，但是read指令给出的长度限制是16字节，这就导致了输入长度可以超过buf内存空间造成溢出</p>
 
       
 
@@ -258,7 +309,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +323,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          栈溢出基础1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">寒假PWN复习-DAY4</div>
+    <a href="/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界新手区pwn第一题</div>
       <i class="icon-circle-right"></i>
     </a>
   
