@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>栈溢出基础2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一般的解题流程 1.先使用checksec 文件名对程序的防护进行查看 2.nc 服务器ip 端口查看 本地也跑一下查看 3，IDA反编译进行分析  4.具体题目具体 做法 攻击脚本一般编写格式 From pwn import * p&#x3D;process(“.&#x2F; 程序名”)——与程序交互 p&#x3D;remote(“ip地址”，端口)——与服务器交互 某个名称&#x3D;目标地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈溢出基础2">
+<meta property="og:url" content="http://example.com/2022/03/04/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%802/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一般的解题流程 1.先使用checksec 文件名对程序的防护进行查看 2.nc 服务器ip 端口查看 本地也跑一下查看 3，IDA反编译进行分析  4.具体题目具体 做法 攻击脚本一般编写格式 From pwn import * p&#x3D;process(“.&#x2F; 程序名”)——与程序交互 p&#x3D;remote(“ip地址”，端口)——与服务器交互 某个名称&#x3D;目标地址">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-04T08:23:23.000Z">
+<meta property="article:modified_time" content="2022-03-04T09:17:19.433Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,16 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-栈溢出基础2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-栈溢出基础2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/04/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%802/">栈溢出基础2</a>
+    <h1 class="article-title" itemprop="name">
+      栈溢出基础2
     </h1>
   
 
@@ -201,6 +203,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -208,16 +231,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/04/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%802/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/03/04/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%802/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">栈溢出基础1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -237,703 +319,14 @@
 
 
 
-
-  
-    <article id="post-栈溢出基础1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/">栈溢出基础1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/" class="archive-article-date">
-  	<time datetime="2022-03-03T14:16:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://s2.loli.net/2022/03/03/xu6tRV5YZidgSUb.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/03/03/d4vqoRUTwtI2z13.png" alt="image.png"></p>
-<p>栈溢出位置：local variables</p>
-<p>该位置一般用于存放局部变量，受用户控制可写入数据</p>
-<p><strong>函数调用栈</strong></p>
-<p>！！！压栈顺序是从高地址压入低地址的</p>
-<p>因此，栈顶对应内存地址压栈时变小，退栈时变大</p>
-<p><strong>三个重要寄存器–esp、ebp、eip</strong></p>
-<p>eip储存的是下一条将要被执行的指令的地址</p>
-<p>他指向的地址都会被当作指令</p>
-<p>esp用于保存调用栈的栈顶地址</p>
-<p>ebp用于保存调用栈的栈基地址</p>
-<p><strong>例子</strong></p>
-<p>vim test.c</p>
-<p>#incude &lt;stdio.h&gt;</p>
-<p>int sum(int x,int y){</p>
-<p>x+y;</p>
-<p>}</p>
-<p>int main(){<br>sum(1,2);</p>
-<p>return 0;</p>
-<p>}</p>
-<p><strong>sum一类也叫复函数</strong></p>
-<p>在运行调用函数（caller）调用被调用函数（callee）的指令时</p>
-<p><img src="https://s2.loli.net/2022/03/03/cqifpeS65DaIRkj.png" alt="image.png"></p>
-<p>1.将被调用函数的参数压入栈内，如没有被调用函数则跳过该步骤。在test.c中，此步骤压入sum函数参数</p>
-<p><img src="https://s2.loli.net/2022/03/03/yjim21FkvWtaEMr.png" alt="image.png"></p>
-<p>2.将调用函数指令的下一条指令地址作为被调用函数的返回地址压入栈中，这样调用函数（caller）的eip（指令）信息得以保存。在test.c中，此步骤压入（return 0）的地址</p>
-<p><img src="https://s2.loli.net/2022/03/03/Rau2OFVAUiNtGSj.png" alt="image.png"></p>
-<p> <strong>3.将被调用函数的局部变量等数据压入栈内</strong></p>
-<p>栈溢出通常都在这一步发生。在test.c中，此步骤压入（1与2）</p>
-<p><img src="https://s2.loli.net/2022/03/03/JYtNf9nO2UoKwrm.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/03/03/LpW58Y2tviNrDZ3.png" alt="image.png"></p>
-<p>4.在被调用函数执行完成后，栈开始恢复状态</p>
-<p>首先先将被调用函数的局部变量弹出栈中。</p>
-<p><img src="https://s2.loli.net/2022/03/03/CXSP39ymDVhrlqf.png" alt="image.png"></p>
-<p>5.然后将及地址内储存的调用函数的基地址</p>
-<p>并将ebp值改为此基地址的值，将当前栈底变换位调用函数栈基。在test.c中，ebp值将改写位main函数栈帧基地址</p>
-<p><img src="https://s2.loli.net/2022/03/03/MU4mi7vAlGP8Hb9.png" alt="image.png"></p>
-<p>6.将被调用函数返回地址弹出栈中，并pop至eip中，eip值被改写指向调用函数（caller）调用被调用函数（callee）指令的下一条指令，此时栈帧已恢复为调用函数（caller）栈帧，被调用函数栈帧被完全弹出栈中。</p>
-<p><img src="https://s2.loli.net/2022/03/03/IPG3VWL6ilKa4tF.png" alt="image.png"></p>
-<p>在被调用函数执行的过程中，我们知道，栈帧顺序从栈顶到栈底是被调用函数的局部变量——被调用函数的返回地址——ebp——被调用函数参数</p>
-<p>所以当局部变量申请的空间被填满后，数据会溢出到返回地址的空间。</p>
-<p><img src="https://s2.loli.net/2022/03/03/7dWkHs32iCjPIaR.png" alt="image.png"></p>
-<p>例子中，char类型buf至申请了8个字节的空间，但是read指令给出的长度限制是16字节，这就导致了输入长度可以超过buf内存空间造成溢出</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/03/%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%801/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-攻防世界新手区pwn第一题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/">攻防世界新手区pwn第一题</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-26T17:13:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>sudo python3 setup.py develop</p>
-<p>题目：get_shell</p>
-<p>NC是个好东西</p>
-<p>做提前养成nc线先检查一下的好习惯</p>
-<p>万一有惊喜呢</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/27/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E6%96%B0%E6%89%8B%E5%8C%BApwn%E7%AC%AC%E4%B8%80%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-寒假PWN复习-DAY4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/">寒假PWN复习-DAY4</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/" class="archive-article-date">
-  	<time datetime="2022-02-12T12:32:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CPU通过控制总线向内存发送指令，通过地址总线向内存发送所读取的地址，内存将对应地址数据读取后通过数据总线发送给CPU</p>
-<p><img src="https://s2.loli.net/2022/02/19/ZfzWg7bt3cj1T96.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/02/19/u4iQ9xrbovX2y1B.png" alt="image.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/12/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-寒假PWN复习-DAY3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/11/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY3/">寒假PWN复习-DAY3</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/11/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY3/" class="archive-article-date">
-  	<time datetime="2022-02-11T12:06:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://s2.loli.net/2022/02/19/DdeKC8FiLGXabNP.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/02/19/r67ph4SUzbeAKkg.png" alt="image.png"></p>
-<p>text节：实现用户自定的功能</p>
-<p>plt节：解析动态链接函数的实际地址</p>
-<p>got.plt节：保存plt节解析出的实际地址</p>
-<p>.bss节：只在内存中占用空间，磁盘上不占用。存放未初始化的全局变量。</p>
-<p><img src="https://s2.loli.net/2022/02/19/vQXEfk7yAbadw4Z.png" alt="image.png"></p>
-<p>！rodata（read only data）也在text（数据段）</p>
-<p>data段存放已初始化的全局变量（区别于.bss）</p>
-<p>heap：动态存储区 </p>
-<p>！stack（栈）：保存进程中函数的执行状态    例如局部变量</p>
-<p>！上图中 int sum（int x ，int y）中，x，y（形式参数）不在图中任何一个位置（32位在执行前压入栈中，64位存放在寄存器中。）形式参数只起到传递值的作用</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/11/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shellcode简要笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.设置rdi指向&#x2F;bin&#x2F;sh<br>2.rsi&#x3D;0,rdx&#x3D;0;<br>3.a&#x3D;0x3b<br>4.system call 进行系统调用<br>over</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/11/shellcode%E7%AE%80%E8%A6%81%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-寒假PWN复习-DAY2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/">寒假PWN复习-DAY2</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/" class="archive-article-date">
-  	<time datetime="2022-02-10T11:13:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>编译型语言代表：C语言</p>
-<p>解释型语言代表：python</p>
-<p><strong>可执行文件</strong></p>
-<p>广义：文件中的数据是可执行代码的文件</p>
-<p>​            .out    .exe   .sh   .py</p>
-<p>狭义：文件中的数据是机器码的文件</p>
-<p>​            .out    .exe    .dll    .so</p>
-<p><strong>可执行文件的分类</strong></p>
-<p>Windows：PE（Portable Executable）</p>
-<p>可执行程序：.exe</p>
-<p>动态链接库：.dll</p>
-<p>静态链接库：.lib</p>
-<p>Linux：ELF（Executable and Linkable Format）</p>
-<p>可执行程序：.out</p>
-<p>动态链接库：.so</p>
-<p>静态链接库：.a  </p>
-<p><strong>ELF内部结构</strong></p>
-<p>ELF分为三个大部分</p>
-<p>header（1&#x2F;2）内含ELF header（文件头）和Program Header Table（程序头或叫段表）</p>
-<p>header（2&#x2F;2)内含一个Section Header table（节头表）</p>
-<p>这两个部分主要包含一些控制信息，如权限</p>
-<p>Sections 包含Code、Date、Sections’ names三个部分</p>
-<p>分别用于存放代码、数据 </p>
-<p> ELF文件头表（ELF header）</p>
-<p>​        记录ELF文件组织结构</p>
-<p>程序头表&#x2F;段表（Program header table）</p>
-<p>​        告诉系统如何创建进程</p>
-<p>​        生成进程的可执行文件必须拥有此结构</p>
-<p>​        重定位文件（链接库）不一定需要</p>
-<p>​        段用于标识进程映像不同部分的权限</p>
-<p>节头表（Section header table）</p>
-<p>​        记录ELF文件的节区信息</p>
-<p>​        用于链接的目标文件必须拥有此结构</p>
-<p>​        其他类型的目标文件不一定需要</p>
-<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121142525596.png" alt="image-20220121142525596"> </p>
-<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121142633901.png" alt="image-20220121142633901"></p>
-<p><img src="C:\Users\X1c1\AppData\Roaming\Typora\typora-user-images\image-20220121143313327.png" alt="image-20220121143313327"></p>
-<p>过程中，具有相同功能的节被合成了一个段</p>
-<p>Heap：动态内存申请调用，在程序需要额外的内存申请时发挥作用</p>
-<p>For kennel：操作系统占用</p>
-<p><img src="https://s2.loli.net/2022/02/19/wrMcd4iCHXgovSN.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/02/19/JR8AFWTq2hMgjSk.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2022/02/19/FwLU327qJgkPcSs.png" alt="image.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/10/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-寒假PWN复习-DAY1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/07/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY1/">寒假PWN复习-DAY1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/02/07/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY1/" class="archive-article-date">
-  	<time datetime="2022-02-07T11:12:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>程序的编译与链接</p>
-<p>1.编译</p>
-<p>  将c源代码变成汇编代码</p>
-<p>2.汇编</p>
-<p>  将汇编语言变成机器码</p>
-<p>3.链接</p>
-<p>  将多个机器码文件合成一个可执行文件</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/07/%E5%AF%92%E5%81%87PWN%E5%A4%8D%E4%B9%A0-DAY1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PWN环境搭建笔记3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/20/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B03/">PWN环境搭建笔记3</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/20/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B03/" class="archive-article-date">
-  	<time datetime="2021-11-20T06:49:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>LibSearch</strong></p>
-<p>年代久远可能已经不是那么可靠了</p>
-<p>可用libc  database search 代替</p>
-<p>网址：libc.blukat.me</p>
-<p><strong>main arena offset</strong></p>
-<p>堆题常用</p>
-<p>it clone <a target="_blank" rel="noopener" href="https://github.com/IZAY01/py_main_arena_offset">https://github.com/IZAY01/py_main_arena_offset</a></p>
-<p>cd py_main_arena_offset</p>
-<p>sudo python3 setup.py develop</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/20/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B03/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PWN环境搭建笔记2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/">PWN环境搭建笔记2</a>
-    </h1>
-  
-
-        
-        <a href="/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/" class="archive-article-date">
-  	<time datetime="2021-11-18T04:21:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Pwndbg</strong></p>
-<p>linux自带的gdb并无法满足Pwn手的需求</p>
-<p>所以需要Pwndbg这一作用于gdb的辅助</p>
-<p>安装</p>
-<p>安装Pwndbg需要利用git从github下载</p>
-<p>所以先安装一个git</p>
-<p>sudo apt install git</p>
-<p>下载完成后</p>
-<p>git clone https：&#x2F;&#x2F;github.com&#x2F;pwndbg&#x2F;pwndbg</p>
-<p>下载后</p>
-<p>cd pwndbg</p>
-<p> .&#x2F;setup.sh</p>
-<p>等待安装即可</p>
-<p><strong>checksec</strong></p>
-<p>跟随pwntools安装完了（大概）</p>
-<p><strong>one_gadget</strong></p>
-<p>需要一个ruby</p>
-<p>sudo apt install ruby</p>
-<p>安装完成后再安装一个包管理器</p>
-<p>sudo apt install gem</p>
-<p>随后</p>
-<p>sudo gem install  one_gadget</p>
-<p>如果报错 则升级gem</p>
-<p>sudo gem update</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/11/18/PWN%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -956,8 +349,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
